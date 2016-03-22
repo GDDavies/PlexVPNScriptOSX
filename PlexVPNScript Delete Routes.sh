@@ -13,5 +13,5 @@ IFS=$'\n' read -d '' -r -a gateway < ~/Library/Application\ Support/Plex\ Media\
 # Add routes
 for i in ${addresses[@]}
 do
-sudo route add $i ${gateway[0]}
+sudo route delete $i ${gateway[0]}
 done
