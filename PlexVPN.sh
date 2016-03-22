@@ -6,7 +6,6 @@ IFS=$'\n' read -d '' -r -a addresses < ~/Library/Application\ Support/Plex\ Medi
 
 # Assign default gateway to variable called gateway
 gateway=`netstat -nr | grep -w 'default' | awk '{print $2}'`
-echo $gateway
 
 # Add routes
 for i in ${addresses[@]}
