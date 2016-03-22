@@ -5,7 +5,7 @@ host -t a plex.tv | awk '{print $4}' | egrep ^[1-9] > ~/Library/Application\ Sup
 IFS=$'\n' read -d '' -r -a addresses < ~/Library/Application\ Support/Plex\ Media\ Server/PlexIPs.txt
 
 # Assign default gateway to variable called gateway
-gateway=`netstat -nr | grep -w 'default' | awk '{print $2}'`
+gateway=`netstat -nr | grep -w 'default' | head -1 | awk '{print $2}'`
 echo $gateway
 
 # Add routes
