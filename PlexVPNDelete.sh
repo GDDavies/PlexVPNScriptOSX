@@ -8,7 +8,7 @@ IFS=$'\n' read -d '' -r -a addresses < ~/Library/Application\ Support/Plex\ Medi
 gateway=`netstat -nr | grep -w 'default' | head -1 | awk '{print $2}'`
 echo $gateway
 
-# Add routes
+# Delete routes
 for i in ${addresses[@]}
 do
 sudo route delete $i $gateway
